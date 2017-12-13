@@ -1,0 +1,113 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      <!--layout:decorator="jobDetail"> -->
+
+<!-- <head th:include="jobList :: [//head]" /> -->
+<head id="headerFragment" th:fragment="headerFragment">
+    <title>Mooc Service</title>
+    <link rel="icon" type="image/png" th:href="@{/clover.png}"></link>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css}" href="@{https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css}"></link>
+
+
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}" href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}"></link>
+    <link rel="stylesheet" type="text/css" href="../styleNow.css" th:href="@{/styleNow.css}"></link>
+</head>
+
+<body>
+<nav class="navbar navbar-default ">
+
+    <div class="container container-fluid">
+
+        <div class="logo navbar-header">
+
+            <header>
+                <h2 class="site_navbar_title">Mooc Service</h2>
+            </header>
+
+        </div>
+
+    </div>
+
+
+
+</nav>
+
+
+<div class="container">
+
+    <content id="center-content">
+
+
+        <h3> API Exposed Endpoints </h3>
+
+
+        <article class="media well listing-item listing-item__jobs" >
+            <div class="media-body">
+                <div class="media-heading listing-item__title">
+                    <p>GET /tags</p>
+                    <p> A list of tags used to categorize mooc subject content.  These tags are matched exactly.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="media well listing-item listing-item__jobs" >
+            <div class="media-body">
+                <div class="media-heading listing-item__title">
+                    <p>GET /tags/{tag} </p>
+                    <p>Enter a {tag} to see all moocs marked with that tag. </p>
+                    <p>For example: /tags/Java </p>
+                </div>
+            </div>
+        </article>
+
+        <article class="media well listing-item listing-item__jobs" >
+            <div class="media-body">
+                <div class="media-heading listing-item__title">
+                    <p>GET /moocs</p>
+                    <p>A list of all moocs.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="media well listing-item listing-item__jobs" >
+            <div class="media-body">
+                <div class="media-heading listing-item__title">
+                    <p>GET /moocs/{tags} </p>
+                    <p>Enter /moocs/{tags} to see all moocs matching any {tags}.</p>
+                    <p>For example:  /moocs/Java,CSS will display all moocs tagged with Java or CSS.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="media well listing-item listing-item__jobs" >
+            <div class="media-body">
+
+                <div class="media-heading listing-item__title">
+                    <p>GET /health</p>
+                </div>
+            </div>
+        </article>
+
+        <hr/>
+
+    </content>
+
+</div>
+
+
+<footer id="center-footer" class="footer" th:fragment="footer">
+
+    <div id="footerText" class="container" >
+
+        <div>
+            <span> &copy;&nbsp;2017&nbsp;Carol&nbsp;Gschwend</span>
+            <div>View code <a href="https://github.com/Cgschwend/MoocList" target="_blank">@ GitHub</a></div>
+        </div>
+
+    </div>
+
+</footer>
+</body>
+</html>
